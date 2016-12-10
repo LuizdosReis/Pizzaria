@@ -9,56 +9,34 @@ package br.com.univali.kob.poo.pizzaria.item;
 
 public class Tamanho
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
+
 	private int fatias;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	private String descricao;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public Tamanho(){
+	
+	
+	public Tamanho(int fatias, String descricao) {
 		super();
+		this.fatias = fatias;
+		this.descricao = descricao;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
+
 	public int getFatias() {
-		// TODO implement me
-		return 0;
+		return fatias;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
+
 	public String getDescricao() {
-		// TODO implement me
-		return "";
+		return descricao;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Tamanho [fatias=" + fatias + ", descricao=" + descricao + "]";
+	}
+	
+	
 
 }
 

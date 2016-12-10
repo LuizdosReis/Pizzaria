@@ -9,99 +9,34 @@ package br.com.univali.kob.poo.pizzaria.item;
 
 public class ItemMenu
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
+
 	private double preco;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	private int codigo;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	private static int proxCodigo;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
+	private int codigo;	
 	private Pizza pizza;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	private Tamanho tamanho;
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
+	private static int proxCodigo = 1;
 	
-	public ItemMenu(Pizza pizza, Tamanho tamanho, double preco) {
-		super();
-		// TODO construct me
+	public ItemMenu(double preco, Pizza pizza, Tamanho tamanho) {
+		this.preco = preco;
+		this.pizza = pizza;
+		this.tamanho = tamanho;
+		this.codigo = proxCodigo++;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public Pizza getPizza() {
-		// TODO implement me
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public Tamanho getTamanho() {
-		// TODO implement me
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	public double getPreco() {
-		// TODO implement me
-		return 0.0;
+		return preco;
 	}
 
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public Pizza getPizza() {
+		return pizza;
+	}
+
+	public Tamanho getTamanho() {
+		return tamanho;
+	}	
 }
 

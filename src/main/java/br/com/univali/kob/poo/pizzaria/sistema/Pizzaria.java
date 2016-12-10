@@ -3,6 +3,7 @@ package br.com.univali.kob.poo.pizzaria.sistema;
 import br.com.univali.kob.poo.pizzaria.cliente.Cliente;
 import br.com.univali.kob.poo.pizzaria.io.ConsoleWrite;
 import br.com.univali.kob.poo.pizzaria.io.FileImport;
+import br.com.univali.kob.poo.pizzaria.leitor.LeitorClientes;
 import br.com.univali.kob.poo.pizzaria.menu.Menu;
 import java.util.Set;
 import br.com.univali.kob.poo.pizzaria.pedido.Pedido;
@@ -35,26 +36,15 @@ public class Pizzaria {
 	}
 
 	/**
-	 * Carrega os clientes cadastrados no arquivo Clientes.txt
+	 * importar os clientes a partir do leitor de clientes 
 	 */
 	public void carregaClientes() {
 		try {
-			List<String[]> frases = FileImport.retornaListaDeFrases("Clientes.txt", ";");
-			for (String[] strings : frases){
-				clientes.add(new Cliente(strings[0], strings[1], strings[3], strings[2]));
-			}
+			LeitorClientes leitor = new LeitorClientes();
+			clientes = leitor.importaClientes();
 		} catch (FileNotFoundException e) {
 			ConsoleWrite.printComQuebraDeLinha(e.getMessage());
 		}
-	}
-
-	/**
-	 * retorna os clientes em um set que não pode ser modificado
-	 * 
-	 * @return
-	 */
-	public Set<Cliente> getClientes() {
-		return Collections.unmodifiableSet(clientes);
 	}
 
 }

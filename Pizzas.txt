@@ -13,9 +13,9 @@
 <Alho frito no Azeite>
 <Parmesão>
 <Azeitonas>
-<16,00>
-<18,00>
-<20,00>
+<16.00>
+<18.00>
+<20.00>
 <QUATRO QUEIJOS>
 <7>
 <Molho>
@@ -25,9 +25,9 @@
 <Catupiry>
 <Azeitona Preta>
 <Oregano>
-<20,00>
-<22,00>
-<24,00>
+<20.00>
+<22.00>
+<24.00>
 <MARGUERITA>
 <7>
 <Molho>
@@ -37,19 +37,19 @@
 <Manjericao>
 <Alho>
 <Azeitona Preta>
-<16,00>
-<18,00>
-<20,00>
+<16.00>
+<18.00>
+<20.00>
 <CHAMPIGNON>
-<6>
+<5>
 <Champignon Salpicado>
 <Parmesão>
 <Orégano>
 <Bacon Dourado>
 <Azeitona>
-<18,00>
-<20,00>
-<22,00>
+<18.00>
+<20.00>
+<22.00>
 <BANANA>
 <5>
 <Banana>
@@ -57,6 +57,6 @@
 <Mel Karo>
 <Conhaque>
 <Canela>
-<18,00>
-<20,00>
-<22,00>
+<18.00>
+<20.00>
+<22.00>

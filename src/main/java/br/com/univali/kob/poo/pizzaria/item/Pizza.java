@@ -11,11 +11,11 @@ public class Pizza
 {
 
 	private String nome;
-	private Collection<Ingrediente> ingrediente;
+	private Collection<Ingrediente> ingredientes;
 	
 	public Pizza(String nome, Collection<Ingrediente> ingrediente) {
 		this.nome = nome;
-		this.ingrediente = ingrediente;
+		this.ingredientes = ingrediente;
 	}
 
 	public String getNome() {
@@ -23,8 +23,16 @@ public class Pizza
 	}
 
 	public Collection<Ingrediente> getIngredientes() {
-		return Collections.unmodifiableCollection(ingrediente);
+		return Collections.unmodifiableCollection(ingredientes);
 	}
+
+	@Override
+	public String toString() {
+		String print = nome + "\n";
+		return print += ingredientes;
+	}
+	
+	
 
 }
 

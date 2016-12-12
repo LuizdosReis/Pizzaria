@@ -30,19 +30,45 @@ public class LeitorPizzas {
 		for (int i = 1; i < quantidadeDeTamanhos * 2; i += 2)
 			tamanhos.add(new Tamanho(Integer.parseInt(frases.get(i + 1)[0]), frases.get(i)[0]));
 
-
-		List<ItemMenu> itensMenu = new ArrayList<>();
-		Set<Ingrediente> ingredientes = new HashSet<>();
+		int quantidadeDePizzas = Integer.parseInt(frases.get(quantidadeDeTamanhos * 2 + 1)[0]);
+		
 		int quantidadeDeIngredientes;
-		for (int i = quantidadeDeTamanhos * 2 + 3; i < frases.size();){
+		Collection<Ingrediente> ingredientes = new HashSet<>();
+
+		for (int i = quantidadeDeTamanhos * 2 + 2; i < frases.size();) {
 			quantidadeDeIngredientes = Integer.parseInt(frases.get(i+1)[0]);
-			for (int j = i+2; j < quantidadeDeIngredientes+i+2; j++) {
-				
+			
+			Collection<Ingrediente> ingredientesDaPizza = new HashSet<>();
+			
+			for (int j = i + 2; j <= quantidadeDeIngredientes + i;j++) {
+				Ingrediente ingrediente = new Ingrediente(frases.get(j)[0]);
+				if (ingredientes.contains(ingrediente)) {
+					for (Ingrediente ingr : ingredientes) {
+						if (ingr.equals(ingrediente))
+							ingrediente = ingr;
+					}
+					ingredientesDaPizza.add(ingrediente);
+				} else {
+					ingredientes.add(ingrediente);
+					ingredientesDaPizza.add(ingrediente);
+				}
+			}
+			Pizza pizza = new Pizza(frases.get(i)[0], ingredientesDaPizza);
+			
+			for (int j = 0; j < quantidadeDeTamanhos; j++) {
+				ItemMenu itemMenu = new ItemMenu(Double.parseDouble(frases.get(i+quantidadeDeIngredientes+j+2)[0]), pizza, tamanhos.get(j));
+				itensMenu.add(itemMenu);
 			}
 			
+			i += quantidadeDeIngredientes+quantidadeDeTamanhos+2;
 		}
 		
+		for (ItemMenu i : itensMenu) {
+			System.out.println(i);
+		}
 		
+		System.out.println(itensMenu.size());
+
 		return itensMenu;
 
 	}

@@ -37,6 +37,13 @@ public class ItemMenu
 
 	public Tamanho getTamanho() {
 		return tamanho;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return pizza +" "+preco;
+	}
+	
+	
 }
 

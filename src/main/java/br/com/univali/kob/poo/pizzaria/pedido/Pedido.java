@@ -99,7 +99,7 @@ public class Pedido
 	 */
 	
 	public void adicionaItemPedido(ItemPedido itemPedido) {
-		// TODO implement me
+		
 	}
 
 	/**

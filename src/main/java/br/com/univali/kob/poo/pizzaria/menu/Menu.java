@@ -23,14 +23,6 @@ public class Menu
 	 */
 	
 	private Map<Integer,ItemMenu> itensDePedidoPeloCodigo;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	private Set<ItemMenu> itemMenu;
 
 

@@ -25,6 +25,10 @@ public class Pizza
 	public Collection<Ingrediente> getIngredientes() {
 		return Collections.unmodifiableCollection(ingredientes);
 	}
+	
+	public void alteraIngrediente(Ingrediente ingrediente, String novoNome){
+		ingrediente.setNome(novoNome);
+	}
 
 	@Override
 	public String toString() {

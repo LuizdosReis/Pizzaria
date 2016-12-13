@@ -48,6 +48,10 @@ public class Ingrediente
 	public String toString() {
 		return nome;
 	}
+
+	public void setNome(String novoNome) {
+		this.nome = novoNome;		
+	}
 	
 	
 

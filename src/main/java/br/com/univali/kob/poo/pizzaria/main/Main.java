@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 
 import br.com.univali.kob.poo.pizzaria.teste.imports.ImportClientesTestes;
 import br.com.univali.kob.poo.pizzaria.teste.imports.ImportPizzaTeste;
+import br.com.univali.kob.poo.pizzaria.teste.imports.ListaDeIngredientesTeste;
 import br.com.univali.kob.poo.pizzaria.teste.io.FileImportTeste;
 
 /**
@@ -17,8 +18,9 @@ public class Main {
      * @throws FileNotFoundException 
      */
     public static void main(String[] args) throws FileNotFoundException {
-    	ImportPizzaTeste t = new ImportPizzaTeste();
-    	t.importaPizzaTeste();
+    	ImportClientesTestes t = new ImportClientesTestes();
+    	t.testaImportacaoClientes();
+    	
     }
     
 }

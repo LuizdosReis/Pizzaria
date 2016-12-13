@@ -63,12 +63,6 @@ public class LeitorPizzas {
 			i += quantidadeDeIngredientes+quantidadeDeTamanhos+2;
 		}
 		
-		for (ItemMenu i : itensMenu) {
-			System.out.println(i);
-		}
-		
-		System.out.println(itensMenu.size());
-
 		return itensMenu;
 
 	}

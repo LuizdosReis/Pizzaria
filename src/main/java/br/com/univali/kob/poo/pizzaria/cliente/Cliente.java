@@ -13,6 +13,8 @@ public class Cliente
 	private String telefone;
 	private String endereco;
 	private String cpf;
+	private int codigo;
+	private static int proxCodigo = 1;
 
 	@Override
 	public int hashCode() {
@@ -44,6 +46,7 @@ public class Cliente
 		this.telefone = telefone;
 		this.endereco = endereco;
 		this.cpf = cpf;
+		this.codigo = proxCodigo++;
 	}
 
 	public String getNome() {
@@ -60,6 +63,10 @@ public class Cliente
 
 	public String getCpf() {
 		return this.cpf;
+	}
+	
+	public int getCodigo() {
+		return codigo;
 	}
 
 }

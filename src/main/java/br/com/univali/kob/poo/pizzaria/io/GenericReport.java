@@ -8,7 +8,6 @@ import java.util.List;
 
 public abstract class GenericReport<T> {
 
-	private int current = 0;
 	private List<T> list;
 	private String fileName;
 
@@ -22,23 +21,13 @@ public abstract class GenericReport<T> {
 	public void generateFile() throws IOException {
 		File file = new File(this.fileName);
 
-		if (!file.exists()) {
+		if (!file.exists())
 			file.createNewFile();
-		}
 		FileWriter fw = new FileWriter(file.getAbsoluteFile());
 		BufferedWriter bw = new BufferedWriter(fw);
-		for (T t : list) {
+		for (T t : list)
 			bw.write(printLine(t));
-		}
 		bw.close();
-	}
-
-	public int getCurrent() {
-		return current;
-	}
-
-	public void setCurrent(int current) {
-		this.current = current;
 	}
 
 	public List<T> getList() {

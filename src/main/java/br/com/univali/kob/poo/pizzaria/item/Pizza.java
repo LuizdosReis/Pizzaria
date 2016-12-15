@@ -3,6 +3,7 @@ package br.com.univali.kob.poo.pizzaria.item;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.NoSuchElementException;
 
 public class Pizza {
 
@@ -23,13 +24,15 @@ public class Pizza {
 	}
 
 	public void alteraIngrediente(Ingrediente ingrediente, String novoNome) {
-		ingrediente.setNome(novoNome);
+		if (ingredientes.contains(ingrediente))
+			ingrediente.setNome(novoNome);
+		else
+			throw new NoSuchElementException("O ingrediente não pertence a esta pizza");
 	}
 
 	@Override
 	public String toString() {
-		String print = nome + "\n";
+		String print = nome + " ";
 		return print += ingredientes;
 	}
 }
->>>>>>> 661a3afa914229dd7ab934db66c89e044b7b12ad

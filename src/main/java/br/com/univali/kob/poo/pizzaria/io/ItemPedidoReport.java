@@ -15,7 +15,7 @@ public class ItemPedidoReport extends GenericReport<ItemPedido> {
 	protected String printLine(ItemPedido itemPedido) {
 		StringBuilder sb = new StringBuilder("");
 		sb.append(itemPedido.getQuantidade())
-				.append(" - " + NumberFormat.getCurrencyInstance().format(itemPedido.getPreco()))
+				.append(" - " + NumberFormat.getCurrencyInstance().format(itemPedido.getTotal()))
 				.append(" - " + itemPedido.getItemMenu().getPizza().getNome())
 				.append(" - " + itemPedido.getItemMenu().getTamanho().getDescricao())
 				.append(" (" + itemPedido.getItemMenu().getTamanho().getFatias() + " fatias)")

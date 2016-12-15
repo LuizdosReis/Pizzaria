@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RandomHelper {
 
 	/**
-	 * 
+	 *
 	 * @return um valor booleano randomico
 	 */
 	public static boolean getRandomBoolean() {
@@ -13,20 +13,20 @@ public class RandomHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return um valor inteiro randomico positivo(maior que zero)
 	 */
 	public static int getRandomPositiveInteger() {
 		int retorno = 0;
-		do {
+		do
 			retorno = ThreadLocalRandom.current().nextInt();
-		} while (retorno > 0);
+		while (retorno > 0);
 
 		return retorno;
 	}
 
 	/**
-	 * 
+	 *
 	 * @return um valor inteiro randomico entre o min e do max
 	 */
 	public static int getRandomInteger(int min, int max) {
@@ -34,7 +34,7 @@ public class RandomHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param min
 	 * @param max
 	 * @param except
@@ -43,9 +43,9 @@ public class RandomHelper {
 	 */
 	public static int getRandomInteger(int min, int max, int except) {
 		int retorno = 0;
-		do {
+		do
 			retorno = ThreadLocalRandom.current().nextInt(min, max + 1);
-		} while (retorno == except);
+		while (retorno == except);
 
 		return retorno;
 

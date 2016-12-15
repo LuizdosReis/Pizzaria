@@ -1,20 +1,20 @@
 package br.com.univali.kob.poo.pizzaria.cliente;
 
-
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
-
-public class Cliente
-{
+public class Cliente {
 	private String nome;
 	private String telefone;
 	private String endereco;
 	private String cpf;
 	private int codigo;
 	private static int proxCodigo = 1;
+
+	public Cliente(String nome, String telefone, String endereco, String cpf) {
+		this.nome = nome;
+		this.telefone = telefone;
+		this.endereco = endereco;
+		this.cpf = cpf;
+		this.codigo = proxCodigo++;
+	}
 
 	@Override
 	public int hashCode() {
@@ -41,14 +41,6 @@ public class Cliente
 		return true;
 	}
 
-	public Cliente(String nome, String telefone, String endereco, String cpf) {
-		this.nome = nome;
-		this.telefone = telefone;
-		this.endereco = endereco;
-		this.cpf = cpf;
-		this.codigo = proxCodigo++;
-	}
-
 	public String getNome() {
 		return this.nome;
 	}
@@ -64,10 +56,9 @@ public class Cliente
 	public String getCpf() {
 		return this.cpf;
 	}
-	
+
 	public int getCodigo() {
 		return codigo;
 	}
 
 }
-

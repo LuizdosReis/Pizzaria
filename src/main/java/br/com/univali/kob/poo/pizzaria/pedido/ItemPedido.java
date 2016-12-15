@@ -5,7 +5,7 @@ import br.com.univali.kob.poo.pizzaria.item.ItemMenu;
 public class ItemPedido {
 
 	private int quantidade;
-	public ItemMenu itemMenu;
+	private ItemMenu itemMenu;
 
 	public ItemPedido(int quantidade, ItemMenu itemMenu) {
 		super();
@@ -22,7 +22,6 @@ public class ItemPedido {
 	}
 
 	public double getPreco() {
-		return quantidade*itemMenu.getPreco();
+		return quantidade * itemMenu.getPreco();
 	}
-
 }

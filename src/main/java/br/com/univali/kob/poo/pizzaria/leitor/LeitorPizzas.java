@@ -17,7 +17,7 @@ import br.com.univali.kob.poo.pizzaria.item.Tamanho;
 public class LeitorPizzas {
 
 	public Map<Integer, ItemMenu> importaItensMenu() throws FileNotFoundException {
-		Map<Integer, ItemMenu> itensMenu = new HashMap();
+		Map<Integer, ItemMenu> itensMenu = new HashMap<>();
 		List<String[]> frases = FileImport.retornaListaDeFrases("Pizzas.txt", ">");
 
 		for (String[] strings : frases) {
@@ -61,7 +61,7 @@ public class LeitorPizzas {
 				itensMenu.put(itemMenu.getCodigo(), itemMenu);
 				System.out.println(itemMenu);
 			}
-			
+
 			i += quantidadeDeIngredientes + quantidadeDeTamanhos + 2;
 		}
 

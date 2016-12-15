@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class Pedido {
 
-	private static int proxCodigo;
+	private static int proxCodigo = 1;
 	private boolean confirmado;
 	private int numero;
 	private Set<ItemPedido> itemPedido;
@@ -40,7 +40,7 @@ public class Pedido {
 	public boolean isConfirmado() {
 		return confirmado;
 	}
-	
+
 	public void setConfirmado(boolean confirmado) {
 		this.confirmado = confirmado;
 	}

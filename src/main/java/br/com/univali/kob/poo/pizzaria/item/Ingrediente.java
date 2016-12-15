@@ -1,14 +1,6 @@
 package br.com.univali.kob.poo.pizzaria.item;
 
-
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
-
-public class Ingrediente
-{
+public class Ingrediente {
 	private String nome;
 
 	public Ingrediente(String nome) {
@@ -50,10 +42,7 @@ public class Ingrediente
 	}
 
 	public void setNome(String novoNome) {
-		this.nome = novoNome;		
+		this.nome = novoNome;
 	}
-	
-	
 
 }
-

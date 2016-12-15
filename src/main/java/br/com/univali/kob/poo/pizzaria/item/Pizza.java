@@ -32,4 +32,3 @@ public class Pizza {
 		return print += ingredientes;
 	}
 }
->>>>>>> 661a3afa914229dd7ab934db66c89e044b7b12ad

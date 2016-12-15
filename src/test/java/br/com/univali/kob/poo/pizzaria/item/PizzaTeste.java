@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.NoSuchElementException;
 
 import org.junit.Test;
 
@@ -27,7 +26,7 @@ public class PizzaTeste {
 
 	}
 
-	@Test(expected = NoSuchElementException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testaAlteracaoDeIngredienteInexistente() {
 		Collection<Ingrediente> ingredientes = new ArrayList<>();
 		Ingrediente ingrediente = new Ingrediente("Molho");

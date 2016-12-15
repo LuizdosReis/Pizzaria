@@ -1,21 +1,19 @@
 package br.com.univali.kob.poo.pizzaria.item;
 
-
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
+ *
  * @generated
  */
 
-public class ItemMenu
-{
+public class ItemMenu {
 
 	private double preco;
-	private int codigo;	
+	private int codigo;
 	private Pizza pizza;
 	private Tamanho tamanho;
 	private static int proxCodigo = 1;
-	
+
 	public ItemMenu(double preco, Pizza pizza, Tamanho tamanho) {
 		this.preco = preco;
 		this.pizza = pizza;
@@ -31,8 +29,8 @@ public class ItemMenu
 		return codigo;
 	}
 
-	public Pizza getPizza() {
-		return pizza;
+	public Pizza getPizza() throws CloneNotSupportedException {
+		return pizza.clone();
 	}
 
 	public Tamanho getTamanho() {
@@ -41,9 +39,7 @@ public class ItemMenu
 
 	@Override
 	public String toString() {
-		return pizza +" "+preco;
+		return pizza + " " + preco;
 	}
-	
-	
-}
 
+}

@@ -1,14 +1,12 @@
 package br.com.univali.kob.poo.pizzaria.cliente;
 
-
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
+ *
  * @generated
  */
 
-public class Cliente
-{
+public class Cliente implements Cloneable {
 	private String nome;
 	private String telefone;
 	private String endereco;
@@ -20,7 +18,7 @@ public class Cliente
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
+		result = prime * result + (cpf == null ? 0 : cpf.hashCode());
 		return result;
 	}
 
@@ -39,6 +37,16 @@ public class Cliente
 		} else if (!cpf.equals(other.cpf))
 			return false;
 		return true;
+	}
+
+	@Override
+	protected Cliente clone() throws CloneNotSupportedException {
+		Cliente clone = (Cliente) super.clone();
+		clone.codigo = this.codigo;
+		clone.cpf = this.cpf;
+		clone.endereco = this.endereco;
+		clone.telefone = this.telefone;
+		return clone();
 	}
 
 	public Cliente(String nome, String telefone, String endereco, String cpf) {
@@ -64,10 +72,9 @@ public class Cliente
 	public String getCpf() {
 		return this.cpf;
 	}
-	
+
 	public int getCodigo() {
 		return codigo;
 	}
 
 }
-

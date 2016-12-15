@@ -1,21 +1,24 @@
 package br.com.univali.kob.poo.pizzaria.item;
-import java.util.LinkedList;
-import java.util.Set;
-import java.util.List;
+
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 
-
-public class Pizza
-{
+public class Pizza implements Cloneable {
 
 	private String nome;
 	private Collection<Ingrediente> ingredientes;
-	
+
 	public Pizza(String nome, Collection<Ingrediente> ingrediente) {
 		this.nome = nome;
 		this.ingredientes = ingrediente;
+	}
+
+	@Override
+	protected Pizza clone() throws CloneNotSupportedException {
+		Pizza clone = (Pizza) super.clone();
+		clone.ingredientes = Collections.unmodifiableCollection(this.ingredientes);
+		clone.nome = this.nome;
+		return clone;
 	}
 
 	public String getNome() {
@@ -25,8 +28,8 @@ public class Pizza
 	public Collection<Ingrediente> getIngredientes() {
 		return Collections.unmodifiableCollection(ingredientes);
 	}
-	
-	public void alteraIngrediente(Ingrediente ingrediente, String novoNome){
+
+	public void alteraIngrediente(Ingrediente ingrediente, String novoNome) {
 		ingrediente.setNome(novoNome);
 	}
 
@@ -35,8 +38,5 @@ public class Pizza
 		String print = nome + "\n";
 		return print += ingredientes;
 	}
-	
-	
 
 }
-

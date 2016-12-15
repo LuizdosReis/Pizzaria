@@ -7,13 +7,13 @@ import java.util.Map;
 import java.util.Set;
 
 import br.com.univali.kob.poo.pizzaria.cliente.Cliente;
+import br.com.univali.kob.poo.pizzaria.helper.RandomHelper;
 import br.com.univali.kob.poo.pizzaria.io.ConsoleWrite;
 import br.com.univali.kob.poo.pizzaria.io.FileGenerator;
 import br.com.univali.kob.poo.pizzaria.leitor.LeitorClientes;
 import br.com.univali.kob.poo.pizzaria.leitor.LeitorPizzas;
 import br.com.univali.kob.poo.pizzaria.menu.Menu;
 import br.com.univali.kob.poo.pizzaria.pedido.Pedido;
-import helper.RandomHelper;
 
 public class Pizzaria {
 
@@ -38,10 +38,14 @@ public class Pizzaria {
 		this.carregaMenu();
 		this.pedidos = new HashSet<>();
 		this.simularPedidos();
-		this.gerarRelatorios();
+		this.geraRelatorios();
 	}
 
-	private void gerarRelatorios() {
+	/**
+	 * chama a classe para salvar os relatorios das pizzas vendidas e nao
+	 * vendidas
+	 */
+	private void geraRelatorios() {
 		try {
 			FileGenerator.generateFilePizzas(this.pedidos, this.menu);
 		} catch (IOException e) {
@@ -62,13 +66,17 @@ public class Pizzaria {
 		}
 	}
 
+	/**
+	 * Roda a simulacao dos pedidos
+	 */
 	private void simularPedidos() {
-
 		for (int i = 0; i < RODADAS_MAX_PEDIDOS; i++)
 			novoPedido();
-
 	}
 
+	/**
+	 * Cria um pedido e imprime no console
+	 */
 	private void novoPedido() {
 		int quantidadeItens = RandomHelper.getRandomInteger(1, 10), quantidade;
 		int codItemMenu = -1;

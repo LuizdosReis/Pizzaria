@@ -67,9 +67,4 @@ public class Cliente {
 		return nome;
 	}
 
-	@Override
-	protected Cliente clone() throws CloneNotSupportedException {
-		return (Cliente) super.clone();
-	}
-
 }

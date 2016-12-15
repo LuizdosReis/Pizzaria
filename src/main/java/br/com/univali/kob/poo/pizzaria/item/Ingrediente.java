@@ -2,7 +2,7 @@ package br.com.univali.kob.poo.pizzaria.item;
 
 /**
  * <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 

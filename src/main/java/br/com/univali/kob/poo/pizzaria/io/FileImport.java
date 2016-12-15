@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import helper.StringHelper;
+import br.com.univali.kob.poo.pizzaria.helper.StringHelper;
 
 /**
  *

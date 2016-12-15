@@ -3,7 +3,6 @@ package br.com.univali.kob.poo.pizzaria.item;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.NoSuchElementException;
 
 public class Pizza {
 
@@ -27,7 +26,7 @@ public class Pizza {
 		if (ingredientes.contains(ingrediente))
 			ingrediente.setNome(novoNome);
 		else
-			throw new NoSuchElementException("O ingrediente não pertence a esta pizza");
+			throw new IllegalArgumentException("O ingrediente não pertence a esta pizza");
 	}
 
 	@Override

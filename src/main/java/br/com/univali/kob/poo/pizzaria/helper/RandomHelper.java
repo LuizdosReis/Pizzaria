@@ -1,4 +1,4 @@
-package helper;
+package br.com.univali.kob.poo.pizzaria.helper;
 
 import java.util.concurrent.ThreadLocalRandom;
 

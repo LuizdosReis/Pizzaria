@@ -1,118 +1,56 @@
 package br.com.univali.kob.poo.pizzaria.pedido;
+
 import java.util.Set;
-import java.util.HashSet;
 
+public class Pedido {
 
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
-
-public class Pedido
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
+	private static int proxCodigo = 1;
 	private boolean confirmado;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	private int numero;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	private static int proxCodigo;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	private Set<ItemPedido> itemPedido;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
-	public Pedido(){
+	public Pedido() {
 		super();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public void setConfirmado(boolean confirmado) {
-		// TODO implement me
+	public Pedido(boolean confirmado, Set<ItemPedido> itemPedido) {
+		super();
+		this.confirmado = confirmado;
+		this.itemPedido = itemPedido;
+		this.numero = proxCodigo++;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public int getNumero() {
-		// TODO implement me
-		return 0;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public boolean getConfirmado() {
-		// TODO implement me
-		return false;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
 	public void adicionaItemPedido(ItemPedido itemPedido) {
-		
+		this.itemPedido.add(itemPedido);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public double valorTotal() {
-		// TODO implement me
-		return 0.0;
+	public double getValorTotal() {
+		Double total = 0.0D;
+		for (ItemPedido itemPedido : this.itemPedido) {
+			total += itemPedido.getPreco();
+		}
+
+		return total;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public boolean isConfirmado() {
+		return confirmado;
+	}
+
+	public void setConfirmado(boolean confirmado) {
+		this.confirmado = confirmado;
+	}
+
+	public Set<ItemPedido> getItemPedido() {
+		return itemPedido;
+	}
+
+	public void setItemPedido(Set<ItemPedido> itemPedido) {
+		this.itemPedido = itemPedido;
 	}
 
 }
-

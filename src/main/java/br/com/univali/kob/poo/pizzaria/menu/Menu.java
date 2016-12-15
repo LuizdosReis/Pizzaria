@@ -1,66 +1,31 @@
 package br.com.univali.kob.poo.pizzaria.menu;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-import br.com.univali.kob.poo.pizzaria.item.ItemMenu;
-import java.util.HashSet;
+
 import java.util.Map;
 
+import br.com.univali.kob.poo.pizzaria.item.ItemMenu;
 
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
+public class Menu {
+	private Map<Integer, ItemMenu> itensDeMenu;
 
-public class Menu
-{
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	private Map<Integer,ItemMenu> itensDePedidoPeloCodigo;
-	private Set<ItemMenu> itemMenu;
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public Menu(List<ItemMenu> ItensDeMenu) {
+	public Menu(Map<Integer, ItemMenu> itensDeMenu) {
 		super();
-		// TODO construct me
+		this.itensDeMenu = itensDeMenu;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public List<ItemMenu> getItensMenu() {
-		// TODO implement me
-		return null;
+	public ItemMenu getItemPedido(Integer codigo) {
+		return this.itensDeMenu.get(codigo);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public ItemMenu getItemPedidoPeloCodigo() {
-		// TODO implement me
-		return null;
+	public int qtdItensMenu() {
+		return this.itensDeMenu.size();
+	}
+
+	public Map<Integer, ItemMenu> getItensDeMenu() {
+		return itensDeMenu;
+	}
+
+	public void setItensDeMenu(Map<Integer, ItemMenu> itensDeMenu) {
+		this.itensDeMenu = itensDeMenu;
 	}
 
 }
-

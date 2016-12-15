@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import helper.StringHelper;
+
 /**
  *
  * @author luizhenrique
@@ -19,10 +21,9 @@ public class FileImport {
 
 	public static List<String[]> retornaListaDeFrases(String nomeArquivo, String divisor) throws FileNotFoundException {
 		List<String[]> listaDeFrases = new ArrayList<>();
-		try {
-			Scanner scanner = new Scanner(new FileInputStream(nomeArquivo));
+		try (Scanner scanner = new Scanner(new FileInputStream(nomeArquivo));) {
 			while (scanner.hasNextLine())
-				listaDeFrases.add(StringHelper.divideAFraseEmPalavras(scanner.nextLine(),divisor));
+				listaDeFrases.add(StringHelper.divideAFraseEmPalavras(scanner.nextLine(), divisor));
 			return listaDeFrases;
 		} catch (FileNotFoundException e) {
 			throw new FileNotFoundException("Arquivo não encontrado no diretorio: " + nomeArquivo);

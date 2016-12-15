@@ -1,9 +1,10 @@
+
 package br.com.univali.kob.poo.pizzaria.item;
 
 import java.util.Collection;
 import java.util.Collections;
 
-public class Pizza implements Cloneable {
+public class Pizza {
 
 	private String nome;
 	private Collection<Ingrediente> ingredientes;
@@ -11,14 +12,6 @@ public class Pizza implements Cloneable {
 	public Pizza(String nome, Collection<Ingrediente> ingrediente) {
 		this.nome = nome;
 		this.ingredientes = ingrediente;
-	}
-
-	@Override
-	protected Pizza clone() throws CloneNotSupportedException {
-		Pizza clone = (Pizza) super.clone();
-		clone.ingredientes = Collections.unmodifiableCollection(this.ingredientes);
-		clone.nome = this.nome;
-		return clone;
 	}
 
 	public String getNome() {
@@ -38,5 +31,5 @@ public class Pizza implements Cloneable {
 		String print = nome + "\n";
 		return print += ingredientes;
 	}
-
 }
+>>>>>>> 661a3afa914229dd7ab934db66c89e044b7b12ad

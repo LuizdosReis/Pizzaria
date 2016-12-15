@@ -6,19 +6,19 @@
 package br.com.univali.kob.poo.pizzaria.teste.io;
 
 import br.com.univali.kob.poo.pizzaria.io.ConsoleWrite;
-import br.com.univali.kob.poo.pizzaria.io.StringHelper;
+import helper.StringHelper;
 
 /**
  *
  * @author luizhenrique
  */
 public class StringTeste {
-   public void testeDivisorDeFrase(){
-       String linha = "Luiz Henrique;(48)999798243;12345678;rua jose da silveira";
-       String[] palavras = StringHelper.divideAFraseEmPalavras(linha, ";");
-       for(String palavra : palavras){
-           ConsoleWrite.printComQuebraDeLinha(palavra);
-       }
-   }
-    
+	public void testeDivisorDeFrase() {
+		String linha = "Luiz Henrique;(48)999798243;12345678;rua jose da silveira";
+		String[] palavras = StringHelper.divideAFraseEmPalavras(linha, ";");
+		for (String palavra : palavras) {
+			ConsoleWrite.printComQuebraDeLinha(palavra);
+		}
+	}
+
 }

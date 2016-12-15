@@ -1,12 +1,14 @@
 package br.com.univali.kob.poo.pizzaria.item;
 
+
 /**
- * <!-- begin-user-doc --> <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc -->
+ * <!--  end-user-doc  -->
  * @generated
  */
 
-public class Ingrediente implements Cloneable {
+public class Ingrediente
+{
 	private String nome;
 
 	public Ingrediente(String nome) {
@@ -14,17 +16,10 @@ public class Ingrediente implements Cloneable {
 	}
 
 	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		Ingrediente clone = (Ingrediente) super.clone();
-		clone.nome = this.nome;
-		return clone;
-	}
-
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (nome == null ? 0 : nome.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
 
@@ -55,7 +50,9 @@ public class Ingrediente implements Cloneable {
 	}
 
 	public void setNome(String novoNome) {
-		this.nome = novoNome;
+		this.nome = novoNome;		
 	}
+	
+	
 
 }

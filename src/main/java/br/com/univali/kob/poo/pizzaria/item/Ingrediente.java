@@ -1,14 +1,12 @@
 package br.com.univali.kob.poo.pizzaria.item;
 
-
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
+ * 
  * @generated
  */
 
-public class Ingrediente
-{
+public class Ingrediente {
 	private String nome;
 
 	public Ingrediente(String nome) {
@@ -19,7 +17,7 @@ public class Ingrediente
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + (nome == null ? 0 : nome.hashCode());
 		return result;
 	}
 
@@ -49,10 +47,8 @@ public class Ingrediente
 		return nome;
 	}
 
-	public void setNome(String novoNome) {
-		this.nome = novoNome;		
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
-	
 
 }

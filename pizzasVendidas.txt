@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 14 - R$ 252,00 - CHAMPIGNON - PEQUENA (6 fatias)
 12 - R$ 240,00 - CHAMPIGNON - MEDIA (12 fatias)
 9 - R$ 198,00 - BANANA - GRANDE (24 fatias)
@@ -11,3 +12,28 @@
 1 - R$ 22,00 - CHAMPIGNON - GRANDE (24 fatias)
 1 - R$ 18,00 - ALHO E OLHO - MEDIA (12 fatias)
 1 - R$ 20,00 - MARGUERITA - GRANDE (24 fatias)
+||||||| merged common ancestors
+11 - R$ 242,00 - QUATRO QUEIJOS - MEDIA (12 fatias)
+10 - R$ 180,00 - CHAMPIGNON - PEQUENA (6 fatias)
+7 - R$ 140,00 - ALHO E OLHO - GRANDE (24 fatias)
+5 - R$ 110,00 - BANANA - GRANDE (24 fatias)
+4 - R$ 64,00 - MARGUERITA - PEQUENA (6 fatias)
+3 - R$ 54,00 - ALHO E OLHO - MEDIA (12 fatias)
+3 - R$ 54,00 - MARGUERITA - MEDIA (12 fatias)
+2 - R$ 48,00 - QUATRO QUEIJOS - GRANDE (24 fatias)
+2 - R$ 36,00 - BANANA - PEQUENA (6 fatias)
+1 - R$ 16,00 - ALHO E OLHO - PEQUENA (6 fatias)
+1 - R$ 20,00 - CHAMPIGNON - MEDIA (12 fatias)
+=======
+12 - R$ 192,00 - ALHO E OLHO - PEQUENA (6 fatias)
+7 - R$ 126,00 - BANANA - PEQUENA (6 fatias)
+7 - R$ 140,00 - QUATRO QUEIJOS - PEQUENA (6 fatias)
+5 - R$ 100,00 - CHAMPIGNON - MEDIA (12 fatias)
+4 - R$ 80,00 - ALHO E OLHO - GRANDE (24 fatias)
+4 - R$ 88,00 - QUATRO QUEIJOS - MEDIA (12 fatias)
+3 - R$ 72,00 - QUATRO QUEIJOS - GRANDE (24 fatias)
+2 - R$ 40,00 - MARGUERITA - GRANDE (24 fatias)
+2 - R$ 40,00 - BANANA - MEDIA (12 fatias)
+1 - R$ 18,00 - ALHO E OLHO - MEDIA (12 fatias)
+1 - R$ 18,00 - CHAMPIGNON - PEQUENA (6 fatias)
+>>>>>>> Junit

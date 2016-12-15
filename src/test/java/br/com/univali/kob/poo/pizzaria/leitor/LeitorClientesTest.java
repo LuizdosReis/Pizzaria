@@ -13,14 +13,11 @@ public class LeitorClientesTest {
 
 	@Test
 	public void testaImportaçãoDeClienteAPartirDeUmArquivo() throws FileNotFoundException {
-		LeitorClientes leitor = new LeitorClientes();	
-		Map<Integer,Cliente> clientes = leitor.importaClientes();
-		
-		System.out.println(clientes.isEmpty());
-		
+		LeitorClientes leitor = new LeitorClientes();
+		Map<Integer, Cliente> clientes = leitor.importaClientes();
+
 		assertTrue("Importação não efetuada", !clientes.isEmpty());
-		
-		
+
 	}
 
 }

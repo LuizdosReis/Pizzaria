@@ -21,7 +21,12 @@ public class ItemPedido {
 		return itemMenu;
 	}
 
-	public double getPreco() {
+	public double getTotal() {
 		return quantidade * itemMenu.getPreco();
+	}
+
+	@Override
+	public String toString() {
+		return "\nQuantidade: " + quantidade + " " + itemMenu.getPizza();
 	}
 }

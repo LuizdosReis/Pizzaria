@@ -57,7 +57,6 @@ public class LeitorPizzas {
 						Double.parseDouble(frases.get(i + quantidadeDeIngredientes + j + 2)[0]), pizza,
 						tamanhos.get(j));
 				itensMenu.put(itemMenu.getCodigo(), itemMenu);
-				System.out.println(itemMenu);
 			}
 
 			i += quantidadeDeIngredientes + quantidadeDeTamanhos + 2;

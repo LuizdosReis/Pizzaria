@@ -14,23 +14,21 @@ import br.com.univali.kob.poo.pizzaria.pedido.ItemPedido;
 import br.com.univali.kob.poo.pizzaria.pedido.Pedido;
 
 public class FileGenerator {
-		public static void generateFilePizzas(Set<Pedido> pedidos, Menu menu) throws IOException {
+	public static void generateFilePizzas(Set<Pedido> pedidos, Menu menu) throws IOException {
 		Map<ItemMenu, Integer> mapItemPedidoQuantidade = new LinkedHashMap<>();
 		List<ItemPedido> itemPedidosConfirmados = new ArrayList<>();
 		List<ItemMenu> itensMenuNaoVendidos = new ArrayList<>();
 		itensMenuNaoVendidos.addAll(menu.getItensDeMenu().values());
 
-		for (Pedido pedido : pedidos) {
-			if (pedido.isConfirmado()) {
-				for (ItemPedido itemPedido : pedido.getItemPedido()) {
+		for (Pedido pedido : pedidos)
+			if (pedido.isConfirmado())
+				for (ItemPedido itemPedido : pedido.getItensPedido()) {
 					int quantidade = mapItemPedidoQuantidade.get(itemPedido.getItemMenu()) != null
 							? mapItemPedidoQuantidade.get(itemPedido.getItemMenu()) + itemPedido.getQuantidade()
 							: itemPedido.getQuantidade();
 					mapItemPedidoQuantidade.put(itemPedido.getItemMenu(), quantidade);
 					itensMenuNaoVendidos.remove(itemPedido.getItemMenu());
 				}
-			}
-		}
 
 		for (Map.Entry<ItemMenu, Integer> keyValue : mapItemPedidoQuantidade.entrySet()) {
 			ItemPedido itemPedido = new ItemPedido(keyValue.getValue(), keyValue.getKey());

@@ -12,29 +12,25 @@ import br.com.univali.kob.poo.pizzaria.io.FileGenerator;
 import br.com.univali.kob.poo.pizzaria.leitor.LeitorClientes;
 import br.com.univali.kob.poo.pizzaria.leitor.LeitorPizzas;
 import br.com.univali.kob.poo.pizzaria.menu.Menu;
-import br.com.univali.kob.poo.pizzaria.pedido.ItemPedido;
 import br.com.univali.kob.poo.pizzaria.pedido.Pedido;
 import helper.RandomHelper;
 
-@SuppressWarnings("unused")
 public class Pizzaria {
 
 	private final int RODADAS_MAX_PEDIDOS;
 	private Set<Pedido> pedidos;
 	private Menu menu;
 	public Map<Integer, Cliente> clientes;
-	private int ultimoCliente;
 
 	/**
 	 * Construtor da pizzaria
-	 * 
+	 *
 	 * @param totalPedidos
 	 *            - Quantidade de pedidos que serah feito pelo simulador de
 	 *            pedidos
 	 */
 	public Pizzaria(int totalPedidos) {
 		this.RODADAS_MAX_PEDIDOS = totalPedidos;
-		this.ultimoCliente = -1;
 	}
 
 	public void executa() {
@@ -49,7 +45,7 @@ public class Pizzaria {
 		try {
 			FileGenerator.generateFilePizzas(this.pedidos, this.menu);
 		} catch (IOException e) {
-			// TODO: handle exception
+			ConsoleWrite.printComQuebraDeLinha(e);
 		}
 
 	}
@@ -68,32 +64,24 @@ public class Pizzaria {
 
 	private void simularPedidos() {
 
-		for (int i = 0; i < RODADAS_MAX_PEDIDOS; i++) {
-			// TODO - NAO ENTENDI SE O PEDIDO TERA O CLIENTE, CASO PRECISE, JA
-			// IMPLEMENTEI PARA PEGAR UM CLIENTE ALEATORIO
-			this.ultimoCliente = RandomHelper.getRandomInteger(0, this.clientes.size(), ultimoCliente);
+		for (int i = 0; i < RODADAS_MAX_PEDIDOS; i++)
 			novoPedido();
-		}
 
 	}
 
 	private void novoPedido() {
-		int quantidadeItens = RandomHelper.getRandomInteger(1, 10);
-		int ultimoItemMenu = -1;
+		int quantidadeItens = RandomHelper.getRandomInteger(1, 10), quantidade;
+		int codItemMenu = -1;
 		boolean confirmado = RandomHelper.getRandomBoolean();
-		Set<ItemPedido> itensPedidos = new HashSet<>();
+		Pedido pedido = new Pedido(confirmado, clientes.get(RandomHelper.getRandomInteger(1, this.clientes.size())));
 		do {
-			ultimoItemMenu = RandomHelper.getRandomInteger(1, menu.qtdItensMenu(), ultimoItemMenu);
-			ItemPedido itemPedido = new ItemPedido(RandomHelper.getRandomInteger(1, quantidadeItens),
-					this.menu.getItemPedido(ultimoItemMenu));
-			quantidadeItens -= itemPedido.getQuantidade();
-			itensPedidos.add(itemPedido);
+			codItemMenu = RandomHelper.getRandomInteger(1, menu.qtdItensMenu(), codItemMenu);
+			quantidade = RandomHelper.getRandomInteger(1, quantidadeItens);
+			quantidadeItens -= quantidade;
+			pedido.adicionaItemPedido(quantidade, this.menu.getItemPedido(codItemMenu));
 		} while (quantidadeItens > 0);
-		this.pedidos.add(new Pedido(confirmado, itensPedidos));
-	}
-
-	private void salva() {
-		// TODO implement me
+		ConsoleWrite.printComQuebraDeLinha(pedido);
+		this.pedidos.add(pedido);
 	}
 
 	/**
